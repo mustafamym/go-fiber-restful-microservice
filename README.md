@@ -1,15 +1,19 @@
 # go-fiber-restful-microservice
 Build a RESTful API on 
+
 Go
+
 Fiber
+
 PostgreSQL
+
 JWT 
+
 Swagger
+
 Docker 
 
-## API methods
-Public:
-
+## Public API 
 GET: /api/v1/books, get all books;
 
 GET: /api/v1/book/{id}, get book by given ID;
