@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"time"
 
+	_ "github.com/jackc/pgx/v4/stdlib" // load pgx driver for PostgreSQL
 	"github.com/jmoiron/sqlx"
 )
 
