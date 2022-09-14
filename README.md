@@ -1,3 +1,5 @@
+![fiber_cover_gh](https://user-images.githubusercontent.com/11155743/112001218-cf258b00-8b2f-11eb-9c6d-d6c38a09af86.jpg)
+
 # go-fiber-restful-microservice
 Build a RESTful API on 
 
@@ -31,7 +33,7 @@ DELETE: /api/secured/book, delete an existing book;
 
 ![aswaggerUI](/swaggerUI.png)
 
-![fiber_cover_gh](https://user-images.githubusercontent.com/11155743/112001218-cf258b00-8b2f-11eb-9c6d-d6c38a09af86.jpg)
+
 
 ## Quick start
 
