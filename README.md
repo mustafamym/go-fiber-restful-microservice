@@ -30,8 +30,11 @@ PATCH: /api/secured/book, update an existing book;
 
 DELETE: /api/secured/book, delete an existing book;
 
+##swagger
 
-![aswaggerUI](/swaggerUI.png)
+ Go to your API Docs page: [127.0.0.1:8080/swagger/index.html](http://127.0.0.1:8080/swagger/index.html)
+
+![swaggerUI](/swaggerUI.png)
 
 
 
