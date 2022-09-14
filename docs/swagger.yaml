@@ -1,0 +1,214 @@
+definitions:
+  models.Book:
+    properties:
+      author:
+        maxLength: 255
+        type: string
+      book_attrs:
+        $ref: '#/definitions/models.BookAttrs'
+      book_status:
+        type: integer
+      created_at:
+        type: string
+      id:
+        type: string
+      title:
+        maxLength: 255
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: string
+    required:
+    - author
+    - book_status
+    - title
+    type: object
+  models.BookAttrs:
+    properties:
+      description:
+        type: string
+      picture:
+        type: string
+      rating:
+        maximum: 10
+        minimum: 1
+        type: integer
+    type: object
+info:
+  contact:
+    email: your@mail.com
+    name: API Support
+  description: This is an auto-generated API Docs.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: API
+  version: "1.0"
+paths:
+  /api/secured/book:
+    delete:
+      consumes:
+      - application/json
+      description: Delete book by given ID.
+      parameters:
+      - description: Book ID
+        in: body
+        name: id
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: ok
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: delete book by given ID
+      tags:
+      - Book
+    post:
+      consumes:
+      - application/json
+      description: Create a new book.
+      parameters:
+      - description: Title
+        in: body
+        name: title
+        required: true
+        schema:
+          type: string
+      - description: Author
+        in: body
+        name: author
+        required: true
+        schema:
+          type: string
+      - description: Book attributes
+        in: body
+        name: book_attrs
+        required: true
+        schema:
+          $ref: '#/definitions/models.BookAttrs'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Book'
+      security:
+      - ApiKeyAuth: []
+      summary: create a new book
+      tags:
+      - Book
+    put:
+      consumes:
+      - application/json
+      description: Update book.
+      parameters:
+      - description: Book ID
+        in: body
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Title
+        in: body
+        name: title
+        required: true
+        schema:
+          type: string
+      - description: Author
+        in: body
+        name: author
+        required: true
+        schema:
+          type: string
+      - description: Book status
+        in: body
+        name: book_status
+        required: true
+        schema:
+          type: integer
+      - description: Book attributes
+        in: body
+        name: book_attrs
+        required: true
+        schema:
+          $ref: '#/definitions/models.BookAttrs'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: ok
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: update book
+      tags:
+      - Book
+  /api/book/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get book by given ID.
+      parameters:
+      - description: Book ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Book'
+      summary: get book by given ID
+      tags:
+      - Book
+  /api/books:
+    get:
+      consumes:
+      - application/json
+      description: Get all exists books.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Book'
+            type: array
+      summary: get all exists books
+      tags:
+      - Books
+  /api/token/new:
+    get:
+      consumes:
+      - application/json
+      description: Create a new access token.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: create a new access token
+      tags:
+      - Token
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
