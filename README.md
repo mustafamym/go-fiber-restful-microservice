@@ -30,3 +30,21 @@ DELETE: /api/secured/book, delete an existing book;
 
 
 ![aswaggerUI](/swaggerUI.png)
+
+![fiber_cover_gh](https://user-images.githubusercontent.com/11155743/112001218-cf258b00-8b2f-11eb-9c6d-d6c38a09af86.jpg)
+
+## Quick start
+
+1. Rename `.env.example` to `.env` and fill it with your environment values.
+2. Install [Docker](https://www.docker.com/get-started) and [migrate](https://github.com/golang-migrate/migrate) tool for applying migrations.
+3. Run project by this command:
+
+```bash
+make docker.run
+
+# Process:
+#   - Generate API docs by Swagger
+#   - Create a new Docker network for containers
+#   - Build and run Docker containers (Fiber, PostgreSQL)
+#   - Apply database migrations (using github.com/golang-migrate/migrate)
+```
