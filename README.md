@@ -45,7 +45,7 @@ DELETE: /api/secured/book, delete an existing book;
 3. Run project by this command:
 
 ```bash
-make docker.run
+docker-compose up
 
 # Process:
 #   - Generate API docs by Swagger
